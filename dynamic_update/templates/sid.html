@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='{{url_for('static',filename="style.css")}}' rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+
+    {% for i in entries %}
+    <form action="order" method="POST">
+    <div class="contatiner" id="item">
+        <div class="image">
+            <img src='{{url_for('static',filename='download.jpeg')}}' alt="">
+        </div>
+        <h4 class="name">
+            {{i[0]}}
+        </h4>
+        <h4 class="section">{{i[1]}}</h4>
+        <h4 class="roll">{{i[2]}}</h4>
+        <h4 class="email">{{i[3]}}</h4>
+        <button class="b1" type="submit"  value="i{{4}}">order me</button>
+
+    </div>
+     {% endfor %}
+
+</body>
+</html>
